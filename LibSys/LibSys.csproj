@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net10.0-windows</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.8" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="MainForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="ReadersForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="ReaderEditForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="ReaderProfileForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="IssueBookForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="ReturnBookForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="CatalogForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="BookEditForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="InventoryForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="AddBookCopyForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="SettingsForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="JournalForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="PayBookDebtForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
+    </ItemGroup>
+
+</Project>
