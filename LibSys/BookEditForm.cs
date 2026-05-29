@@ -67,7 +67,7 @@ namespace LibSys
             }
         }
 
-        public void SetMode(int? bookId)
+        public async void SetMode(int? bookId)
         {
             _bookId = bookId;
             numYear.Maximum = DateTime.Now.Year;
@@ -84,12 +84,12 @@ namespace LibSys
             panelAddPublisher.Visible = false;
             panelAddTag.Visible = false;
 
-            LoadDictionaries();
+            await LoadDictionariesAsync();
 
             if (_bookId.HasValue)
             {
                 btnSave.Text = "Зберегти зміни";
-                LoadBookData();
+                await LoadBookDataAsync();
             }
             else
             {
@@ -98,7 +98,7 @@ namespace LibSys
             }
         }
 
-        private async void LoadDictionaries()
+        private async Task LoadDictionariesAsync()
         {
             _allPublishers = await _queryService.GetAllPublishersNonArchivedAsync();
             _allAuthors = await _queryService.GetAllAuthorsNonArchivedAsync();
@@ -165,7 +165,7 @@ namespace LibSys
         private void txtSearchAuthor_TextChanged(object sender, EventArgs e) => FilterAuthors();
         private void txtSearchTag_TextChanged(object sender, EventArgs e) => FilterTags();
 
-        private async void LoadBookData()
+        private async Task LoadBookDataAsync()
         {
             var book = await _bookEditService.GetBookWithDetailsAsync(_bookId.Value);
             if (book == null) return;
