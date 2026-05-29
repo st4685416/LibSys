@@ -12,7 +12,6 @@ namespace LibSys
 			{
 				context.Database.EnsureCreated();
 			}
-			//DatabaseSeeder.Seed();
 			Application.Run(new MainForm());
 		}
 	}
